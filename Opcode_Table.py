@@ -1,21 +1,27 @@
 # OPCODE DECLRACTION
 # 0 IS FOR NON MRI INSTRUCTIONS 
 # 1 IS FOR MRI INSTRUCTIONS
-Opcodes = {"CLA" : ("0000",0),
-"LAC" : ("0001",1),
-"SAC" : ("0010",1),
-"ADD" : ("0011",1),
-"SUB" : ("0100",1),
-"BRZ" : ("0101",1),
-"BRN" : ("0110",1),
-"BRP" : ("0111",1),
-"INP" : ("1000",1),
-"DSP" : ("1001",1),
-"MUL" : ("1010",1),
-"DIV" : ("1011",1),
-"STP" : ("1100",0)}
+
+NON_MRI_INSTRUCTION = 0
+MRI_INSTRUCTION = 1
+
+# TUPLE IN OPCODE DEFINES ABOUT THE OPCODE (OPCODE,TYPE, NUMBER OF OPERANDS)
+Opcodes = {"CLA" : ("0000",NON_MRI_INSTRUCTION,0),
+"LAC" : ("0001",MRI_INSTRUCTION,1),
+"SAC" : ("0010",MRI_INSTRUCTION,1),
+"ADD" : ("0011",MRI_INSTRUCTION,1),
+"SUB" : ("0100",MRI_INSTRUCTION,1),
+"BRZ" : ("0101",MRI_INSTRUCTION,1),
+"BRN" : ("0110",MRI_INSTRUCTION,1),
+"BRP" : ("0111",MRI_INSTRUCTION,1),
+"INP" : ("1000",MRI_INSTRUCTION,1),
+"DSP" : ("1001",MRI_INSTRUCTION,1),
+"MUL" : ("1010",MRI_INSTRUCTION,1),
+"DIV" : ("1011",MRI_INSTRUCTION,1),
+"STP" : ("1100",NON_MRI_INSTRUCTION,0)}
 
 
+# Checks if input is correct opcode or not
 def CheckOpcode(opcode):
 	if opcode not in Opcodes:
 		return -1
