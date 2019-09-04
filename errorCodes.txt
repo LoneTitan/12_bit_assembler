@@ -1,1 +1,2 @@
 -1 : (Wrong Opcode provided)
+-2 : (Symbol not found in symbol table)
