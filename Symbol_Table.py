@@ -1,8 +1,24 @@
 Symbol_Table = {}
 
-# Adding new symbols to the table with thier locations
-def addtoTable(symbol):
-	if(symbol.Type.equals("Variable")):
+# Adding label to the symbol table if label is declared
+def addLabelwithLocation(symbol,location):
+	if symbol.name not in Symbol_Table:
+		Symbol_Table[symbol.name] = [location , symbol.Type]
+	else:
+		Type = Symbol_Table[symbol.name][1]
+
+		if(Type.equals("Variable")):
+			return -3
+
+		if(Type.equals("Label")):
+			address = Symbol_Table[symbol.name][0]
+			if(address == -1):
+				Symbol_Table[symbol.name][0] = location
+				return 0
+			return -4
+
+def addVariable(symbol):
+	
 		
 
 
