@@ -1,8 +1,10 @@
 Symbol_Table = {}
 
-def addtoTable(symbol,location):
-	if symbol not in Symbol_Table:
-		Symbol_Table[symbol] = (location)
+# Adding new symbols to the table with thier locations
+def addtoTable(symbol):
+	if(symbol.Type.equals("Variable")):
+		
+
 
 
 def getlocation(symbol):
@@ -10,4 +12,3 @@ def getlocation(symbol):
 		return Symbol_Table[symbol]
 	else :
 		return -2
-		
