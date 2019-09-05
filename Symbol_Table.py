@@ -18,7 +18,11 @@ def addLabelwithLocation(symbol,location):
 			return -4
 
 def addVariable(symbol):
-	
+	if symbol.name in Symbol_Table:
+		if(symbol.type.equals(Symbol_Table[symbol.name][1])):
+			return -5
+	else:
+		Symbol_Table[symbol.name] = [-1,symbol.Type]
 		
 
 
