@@ -9,3 +9,4 @@ def takeInput():
         a = f1[i].split(" ");
         line.append(a);
     return line
+print(takeInput())
