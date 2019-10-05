@@ -1,9 +1,11 @@
+import Symbol
 Symbol_Table = {}
 
 # Adding label to the symbol table if label is declared
 def addLabelwithLocation(symbol,location):
 	if symbol.name not in Symbol_Table:
 		Symbol_Table[symbol.name] = [location , symbol.Type]
+		return 0
 	else:
 		Type = Symbol_Table[symbol.name][1]
 
@@ -23,7 +25,7 @@ def addVariable(symbol):
 			return -5
 	else:
 		Symbol_Table[symbol.name] = [-1,symbol.Type]
-		
+		return 0
 
 
 

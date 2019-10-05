@@ -3,7 +3,7 @@
 # Label
 
 class Symbol:
-	Symbol(self,name,Type):
+	def __init__(self,name,Type):
 		this.name = name
 		this.Type = Type
 	
