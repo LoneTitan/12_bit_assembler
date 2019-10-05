@@ -1,5 +1,10 @@
 import Symbol
 Symbol_Table = {}
+'''
+/////////////////////////////////////////////////////////////////////////
+Every fuction returns 0 on correct running else returns a negative number
+/////////////////////////////////////////////////////////////////////////
+'''
 
 # Adding label to the symbol table if label is declared
 def addLabelwithLocation(symbol,location):
@@ -32,5 +37,6 @@ def addVariable(symbol):
 def getlocation(symbol):
 	if symbol in Symbol_Table:
 		return Symbol_Table[symbol]
+		return 0
 	else :
 		return -2
