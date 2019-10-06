@@ -37,6 +37,3 @@ def addVariable(symbol):
 def getlocation(symbol):
 	if symbol in Symbol_Table:
 		return Symbol_Table[symbol]
-		return 0
-	else :
-		return -2
