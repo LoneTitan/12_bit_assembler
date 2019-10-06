@@ -4,6 +4,6 @@
 
 class Symbol:
 	def __init__(self,name,Type):
-		this.name = name
-		this.Type = Type
+		self.name = name
+		self.Type = Type
 	

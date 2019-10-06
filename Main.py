@@ -2,6 +2,7 @@ import Opcode_Table
 import Symbol_Table 
 import take_Input
 import re
+import errorlist
 
 program = []     # assembly code from the file
 bin_program = [] # Converted Binary Program
@@ -40,14 +41,28 @@ def remove_colon(line):
 	while('' in line):
 		line.remove('')
 
-	return line
+	return line,flag
+
 
 
 def passOne():
+	global location_counter
 	for x in range(len(program)):
+		error = 0
 		program[x] = remove_Comments(program[x])		
-		program[x] = remove_colon(program[x])
-		print(program[x])
+		program[x],label_present = remove_colon(program[x])
+		print(label_present)
+		if(label_present):
+			error = Symbol_Table.addLabelwithLocation(program[x][0],location_counter)
+
+		if(error<0):
+			errorlist.storeError(error,program[x][0],location_counter)
+			isCorrect = False
+		print(Symbol_Table.Symbol_Table)
+		location_counter += 1
+
+
+
 
 def passTwo():
 
@@ -59,7 +74,7 @@ def createBinary():
 
 
 
-program = take_Input.takeInput()
+program = take_Input.takeInput("inputfile.txt")
 
 passOne()
 passTwo()
