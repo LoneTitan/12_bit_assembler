@@ -1,6 +1,10 @@
 import take_Input
+
 errorCodes = []
 errorCodes = take_Input.takeInput("errorCodes.txt")
+
+print(errorCodes)
+
 def storeError(errorcode,problem,line_number,file_name="error.txt"):
 	temp = []
 	error = ""

@@ -51,15 +51,21 @@ def passOne():
 		error = 0
 		program[x] = remove_Comments(program[x])		
 		program[x],label_present = remove_colon(program[x])
+		print(program[x])
+		print(Symbol_Table.Symbol_Table)
 		print(label_present)
 		if(label_present):
 			error = Symbol_Table.addLabelwithLocation(program[x][0],location_counter)
-
+			
 		if(error<0):
 			errorlist.storeError(error,program[x][0],location_counter)
 			isCorrect = False
-		print(Symbol_Table.Symbol_Table)
+		if(label_present):
+			program[x].pop(0)
 		location_counter += 1
+	for i in program:
+		print(i)
+
 
 
 

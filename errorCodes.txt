@@ -1,4 +1,3 @@
-if lc>255: Fatal error cannot fit the program in the given space
 -1 : Opcode not found
 -2 : Symbol not found in symbol table
 -3 : Symbol defined as a variable
@@ -6,3 +5,4 @@ if lc>255: Fatal error cannot fit the program in the given space
 -5 : Cannot use label as a variable
 -6 : Opcode cannot be used as a label
 -7 : Opcode cannot be used as a variable 
+-8 : Cannot fit program in given space.
