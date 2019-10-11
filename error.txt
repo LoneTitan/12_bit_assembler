@@ -1,8 +1,0 @@
-L1 : Label is previously initialised at line number:9
-L1 : Label is previously initialised Error at line number:9
-L1 : Label is previously initialised Error at line number:9
-L1 : Label is previously initialised Error at line number:9
-DSP : Label is previously initialised Error at line number:9
-DSP : Label is previously initialised Error at line number:9
-DSP : Label is previously initialised Error at line number:9
-L1 : Label is previously initialised Error at line number:9

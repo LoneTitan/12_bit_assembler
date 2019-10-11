@@ -1,13 +1,13 @@
 CLA
-INP 157// hello world
-INP 158 // my comments
-LAC 157//avx
-SUB 158
+INP A
+INP B // my comments
+LAC A//avx
+SUB B
 BRN L1
-DSP 157
-L1:CLA
+DSP A
+CLA
 BRZ L2
-L1 : DSP 158
+L1 : DSP B
 CLA
 BRZ L2
 L2 :STP

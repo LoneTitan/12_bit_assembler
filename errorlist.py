@@ -3,7 +3,6 @@ import take_Input
 errorCodes = []
 errorCodes = take_Input.takeInput("errorCodes.txt")
 
-print(errorCodes)
 
 def storeError(errorcode,problem,line_number,file_name="error.txt"):
 	temp = []
@@ -22,3 +21,10 @@ def storeError(errorcode,problem,line_number,file_name="error.txt"):
 	file.write(error+"\r\n")
 	file.close()
 
+def clear_error_file(file_name="error.txt"):
+	try:
+		f = open(file_name, 'r+')
+		f.truncate(0)
+	except Exception:
+		f = open(file_name,'w+')
+		f.close()

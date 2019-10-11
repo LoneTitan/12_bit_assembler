@@ -1,6 +1,6 @@
 def takeInput(filename):
 	line = []
-	file = open(filename,"r")
+	file = open(filename+".txt","r")
 	f1 = file.readlines()
 	for i in range(0,len(f1)):
         #add error check for excess length

@@ -1,8 +1,15 @@
 -1 : Opcode not found
 -2 : Symbol not found in symbol table
--3 : Symbol defined as a variable
+-3 : Symbol defined as a variable cannot use as Label
 -4 : Label is previously initialised
 -5 : Cannot use label as a variable
 -6 : Opcode cannot be used as a label
 -7 : Opcode cannot be used as a variable 
--8 : Cannot fit program in given space.
+-8 : Cannot fit program in given space The program is bigger than 255 words
+-9 : does not need operand (extra operands provided)
+-10 : are not required (extra operands present)
+-11 : Needs more operands
+-12 : is not Defined in the above program.
+-13 : called in middle of program (not allowed)
+-14 : not found 
+-15 : label not initialized anywhere in the program.
