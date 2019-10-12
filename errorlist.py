@@ -1,10 +1,10 @@
 import take_Input
 
 errorCodes = []
-errorCodes = take_Input.takeInput("errorCodes.txt")
+errorCodes = take_Input.takeInput("errorCodes")
 
 
-def storeError(errorcode,problem,line_number,file_name="error.txt"):
+def storeError(errorcode,problem,line_number,file_name="inputfile_error"):
 	temp = []
 	error = ""
 	for i in errorCodes:

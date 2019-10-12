@@ -123,7 +123,7 @@ def passOne():
 
 					errorlist.storeError(error,err_str,location_counter)
 
-				if(len(program[x][1:]<operands)):
+				if(len(program[x][1:])<operands):
 				
 					error = -11
 					errorlist.storeError(error,program[x][0],location_counter)
@@ -166,17 +166,24 @@ def passOne():
 
 	error = 0
 	for i in Symbol_Table.Symbol_Table:
+		
 		if(Symbol_Table.Symbol_Table[i][1] == "Variable"):
 			Symbol_Table.Symbol_Table[i][0] = location_counter
 			location_counter += 1
+		
+		if(Symbol_Table.Symbol_Table[i][1] == "Label"):
+			if(Symbol_Table.Symbol_Table[i][0] == -1):
+				error = -15
+
 
 		if(location_counter>255):
 			error = -8
-			isCorrect = False
 
 		if(error<0):
+			isCorrect = False
 			errorlist.storeError(error,"CRITICAL",-1)
-			break
+			if(error == -8):
+				break
 
 		
 
@@ -233,7 +240,7 @@ def main():
 	global program
 	global location_counter
 	global isCorrect
-	program = take_Input.takeInput("inputfile.txt")
+	program = take_Input.takeInput("inputfile")
 	errorlist.clear_error_file()
 	passOne()
 	location_counter = 0
@@ -242,7 +249,9 @@ def main():
 	if(isCorrect):
 		createOutputFile()
 		createBinary()
-
+		print("_Output stored in inputfile_Output.txt")
+		return
+	print("Error stored in inputfile_error.txt")
 
 if __name__ == "__main__":
 	main()
