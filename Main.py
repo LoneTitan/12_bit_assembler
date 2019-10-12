@@ -195,9 +195,7 @@ def passTwo():
 	global location_counter
 	global program
 	global bin_program
-	global isCorrect
 	for i in program:
-		error = 0
 		instruction = ""
 		Opcode_info,error = Opcode_Table.CheckOpcode(i[0])
 		opcode , MRI , operands , definative , accept_variable = Opcode_info
@@ -205,14 +203,9 @@ def passTwo():
 			instruction = opcode +"00000000"
 		else:
 			symbol_address = Symbol_Table.getlocation(i[1])
-			if(symbol_address == -1):
-				error = -15
-				errorlist.storeError(error,i[1],location_counter)
-				isCorrect = False
-			else:
-				symbol_address = bin(symbol_address)[2:]
-				symbol_address = "0"*(len(symbol_address))+symbol_address
-				instruction = opcode + symbol_address
+			symbol_address = bin(symbol_address)[2:]
+			symbol_address = "0"*(len(symbol_address))+symbol_address
+			instruction = opcode + symbol_address
 		bin_program.append(instruction)
 		location_counter += 1
 		
